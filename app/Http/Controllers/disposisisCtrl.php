@@ -18,10 +18,11 @@ class disposisisCtrl extends Controller
     function form(Request $req) {
         // add data or edit
 
-        // $data = [
-        //     "title" => "disposisis",
-        //     dtDis => disposisi::where("id",$req)
-        // ];
+        $data = [
+            "title" => "disposisis",
+            dtDis => disposisi::where("id",$req)
+        ];
+        
         return view('disposisis.form');
      
 
