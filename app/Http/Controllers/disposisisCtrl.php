@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\disposisi;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class disposisisCtrl extends Controller
 {
     function index(){
@@ -20,14 +20,15 @@ class disposisisCtrl extends Controller
 
         $data = [
             "title" => "disposisis",
-            'dtDis' => disposisi::where("id",$req)
+            // 'dtDis' => disposisi::where("id",$req)
+            'user'=>DB::table('users')->get()
         ];
-        
-        return view('disposisis.form');
+    
+        return view('disposisis.form',$data);
      
 
     }
-    function save(Request $request,){
+    function save(Request $request){
         // dd($request);
         // if ($id) {
         //     $disposisi = disposisi::find($id);
@@ -42,6 +43,15 @@ class disposisisCtrl extends Controller
         //     ]);
             # code...
         // }else{
+            $request->validate([
+                    'no_agenda' => 'required',
+                    'petugas_id' => 'required',
+                    'jenis_surat' => 'required',
+                    'tanggal_kirim' => 'required',
+                    'no_surat' => 'required',
+                    'pengirim' => 'required',
+                    'tanggapan' => 'required',
+                ]);
             disposisi::create([
                 'no_agenda' => $request->no_agenda,
                 'petugas_id' => $request->petugas_id,
@@ -51,10 +61,15 @@ class disposisisCtrl extends Controller
                 'pengirim' => $request->pengirim,
                 'tanggapan' => $request->tanggapan,
             ]);
+            return redirect('/disposisis');
         // }
 
     }
     function delete($id){
+        $data = desposisi::where('id',$id)->first();
+
+        $data->delete();
+        return redirect('/disposisis');
 
     }
 }

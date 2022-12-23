@@ -29,9 +29,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                @foreach ($dtDis as $rsdis)
+                @foreach ($dtDis as $key=> $rsdis)
                     <tr>
-                        <td>1</td>
+                        <td>{{$key+1}}</td>
                         <td>{{$rsdis->no_agenda}}</td>
                         <td>{{$rsdis->petugas_id}}</td>
                         <td>{{$rsdis->jenis_surat}}</td>
