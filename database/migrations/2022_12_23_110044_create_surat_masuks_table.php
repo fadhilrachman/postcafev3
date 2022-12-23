@@ -15,16 +15,14 @@ class CreateSuratMasuksTable extends Migration
     {
         Schema::create('surat_masuks', function (Blueprint $table) {
             $table->id();
-            $table->id();
             $table->integer('no_agenda');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('jenis_surat');
+            $table->varchar('jenis_surat');
             $table->date('tanggal_kirim');
             $table->integer('no_surat');
-            $table->string('pengirim');
-            $table->string('perihal');
-            $table->timestamps();
+            $table->varchar('pengirim');
+            $table->varchar('perihal');
             $table->timestamps();
         });
     }
