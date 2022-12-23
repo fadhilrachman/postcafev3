@@ -92,13 +92,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{  url('menu')   }}" class="nav-link">
+                <a href="/disposisis" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{  url('menu/form')   }}" class="nav-link">
+                <a href="disposisis/form" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add New</p>
                 </a>

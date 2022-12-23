@@ -11,7 +11,7 @@
                     <div class="form-group">
                         <label for="cat_nm">No Agenda</label>
                         {{-- <input type="hidden" name="id_cat" value="{{ @$rsCat->id }}"> --}}
-                        <input type="text" class="form-control @error('no_agenda') is-invalid @enderror" name="no_agenda" id="no_agenda" placeholder="No Agenda" value="{{ @$rsCat->no_agenda }}">
+                        <input type="number" class="form-control @error('no_agenda') is-invalid @enderror" name="no_agenda" id="no_agenda" placeholder="No Agenda" value="{{ old('no_agenda') }}">
                         @error('no_agenda')
                             <div id="no_agenda" class="invalid-feedback">
                                 {{ $message }}
@@ -21,7 +21,14 @@
                     <div class="form-group">
                         <label for="cat_nm">Petugas</label>
                         {{-- <input type="hidden" name="id_cat" value="{{ @$rsCat->id }}"> --}}
-                        <input type="text" class="form-control @error('petugas_id') is-invalid @enderror" name="petugas_id" id="petugas_id" placeholder="Nama Category" value="{{ @$rsCat->petugas_id }}">
+                        <select name="petugas_id"  class="form-control @error('petugas_id') is-invalid @enderror"  id="">
+                        @forelse ($user as $item)
+                        <option value="">Petugas</option>
+                            <option value="{{$item->id}}">{{$item->nama}}</option>
+                        @empty
+                            <option value="">Tidak ada petugas</option>
+                        @endforelse
+                        </select>
                         @error('petugas_id')
                             <div id="petugas_id" class="invalid-feedback">
                                 {{ $message }}
@@ -45,6 +52,16 @@
                         <input type="date" class="form-control @error('tanggal_kirim') is-invalid @enderror" name="tanggal_kirim" id="tanggal_kirim" placeholder="Nama Category" value="{{ @$rsCat->tanggal_kirim }}">
                         @error('tanggal_kirim')
                             <div id="tanggal_kirim" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="cat_nm">No Surat</label>
+                        {{-- <input type="hidden" name="id_cat" value="{{ @$rsCat->id }}"> --}}
+                        <input type="number" class="form-control @error('no_surat') is-invalid @enderror" name="no_surat" id="no_surat" placeholder="Nama Category" value="{{ @$rsCat->no_surat }}">
+                        @error('no_surat')
+                            <div id="no_surat" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
