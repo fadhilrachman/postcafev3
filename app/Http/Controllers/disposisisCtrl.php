@@ -10,9 +10,11 @@ class disposisisCtrl extends Controller
     function index(){
         // list data
         $data = [
+            
         //     title => "disposisis",
-            'dtDis' =>  disposisi::join('users','users.id','=','disposisis.id_disp')->get()
+            'dtDis' =>  disposisi::get()
         ];
+        
         return view("disposisis.data",$data);
     }
     function form(Request $req) {
@@ -65,12 +67,12 @@ class disposisisCtrl extends Controller
         // }
 
     }
-    // function delete($id){
-    //     $data = desposisi::where('id',$id)->first();
+    function delete($id){
+        $data = disposisi::where('id_disp',$id)->first();
 
-    //     $data->delete();
-    //     return redirect('/disposisis');
-    // }
+        $data->delete();
+        return redirect('/disposisis');
+    }
 
     function halamanEdit($id_disp){
         $data = disposisi::where('id_disp',$id_disp)->first();

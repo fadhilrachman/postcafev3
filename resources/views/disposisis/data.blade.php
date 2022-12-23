@@ -9,8 +9,8 @@
     <!-- ./col -->
     <div class="card row">
         <div class="card-header">
-            <div class="card-title">
-                <a class="btn btn-block btn-primary btn-sm" href="">Add New</a>
+            <div class="card-tools">
+                <a class="btn btn-block btn-primary btn-md" href="{{ url('disposisis/form')  }}">Add New</a>
             </div>
         </div>
         <div class="card-body">
@@ -40,8 +40,8 @@
                         <td>{{$rsdis->pengirim}}</td>
                         <td>{{$rsdis->tanggapan}}</td>
                         <td>
-                            <button class="btn btn-danger">delete</button>
-                            <button class="btn btn-success">edit</button>
+                            <a href="{{ url("disposisis/delete/$rsdis->id_disp")}}"><i class="bi bi-trash"></i></a>
+                            <a href="{{ url("disposisis/edit/$rsdis->id_disp")  }}"><i class="bi bi-pencil"></i></a>
                         </td>
                       </tr>
                 @endforeach
