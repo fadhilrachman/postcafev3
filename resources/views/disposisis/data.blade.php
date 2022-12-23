@@ -33,7 +33,7 @@
                     <tr>
                         <td>{{$key+1}}</td>
                         <td>{{$rsdis->no_agenda}}</td>
-                        <td>{{$rsdis->petugas_id}}</td>
+                        <td>{{$rsdis->nama}}</td>
                         <td>{{$rsdis->jenis_surat}}</td>
                         <td>{{$rsdis->tanggal_kirim}}</td>
                         <td>{{$rsdis->no_surat}}</td>
@@ -41,7 +41,7 @@
                         <td>{{$rsdis->tanggapan}}</td>
                         <td>
                             <button class="btn btn-danger">delete</button>
-                            <a href="{{ url("disposisis/form".$rsdis->id) }}"><button class="btn btn-success">edit</button></a>
+                            <button class="btn btn-success">edit</button>
                         </td>
                       </tr>
                 @endforeach

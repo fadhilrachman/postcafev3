@@ -14,7 +14,7 @@ class CreateDisposisisTable extends Migration
     public function up()
     {
         Schema::create('disposisis', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_disp');
             $table->integer('no_agenda');   
             $table->integer('petugas_id');
             $table->string('jenis_surat');
