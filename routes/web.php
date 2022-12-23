@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 });
+
+// disposisis
+Route::get("disposisis",[disposisisCtrl::class,"index"]);
+Route::get("disposisis/form/{id?}",[disposisisCtrl::class,"form"]);
+Route::get("disposisis/delete/{id}",[disposisisCtrl::class,"delete"]);
+Route::post("disposisis/save",[disposisisCtrl::class,"save"]);
