@@ -11,9 +11,7 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="" class="nav-link">Surat Masuk</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Surat Masuk</a>
-      </li>
+      
       <li class="nav-item d-none d-sm-inline-block">
         <a href="" class="nav-link">Surat Keluar</a>
       </li>

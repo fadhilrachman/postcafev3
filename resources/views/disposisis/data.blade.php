@@ -41,7 +41,7 @@
                         <td>{{$rsdis->tanggapan}}</td>
                         <td>
                             <button class="btn btn-danger">delete</button>
-                            <button class="btn btn-success">edit</button>
+                            <a href="{{ url("disposisis/form".$rsdis->id) }}"><button class="btn btn-success">edit</button></a>
                         </td>
                       </tr>
                 @endforeach
