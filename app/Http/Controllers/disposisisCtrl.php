@@ -20,7 +20,7 @@ class disposisisCtrl extends Controller
 
         $data = [
             "title" => "disposisis",
-            dtDis => disposisi::where("id",$req)
+            'dtDis' => disposisi::where("id",$req)
         ];
         
         return view('disposisis.form');
