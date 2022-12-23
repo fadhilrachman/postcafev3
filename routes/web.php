@@ -20,8 +20,10 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-// disposisis
+//disposisis
 Route::get("disposisis",[disposisisCtrl::class,"index"]);
-Route::get("disposisis/form/{id?}",[disposisisCtrl::class,"form"]);
+Route::get("disposisis/form",[disposisisCtrl::class,"form"]);
+Route::get("disposisis/edit/{id_disp}",[disposisisCtrl::class,'halamanEdit']);
 Route::get("disposisis/delete/{id}",[disposisisCtrl::class,"delete"]);
 Route::post("disposisis/save",[disposisisCtrl::class,"save"]);
+Route::put('disposisis/update/{id_disp}',[disposisisCtrl::class,'edit']);

@@ -11,7 +11,7 @@ class disposisisCtrl extends Controller
         // list data
         $data = [
         //     title => "disposisis",
-            'dtDis' =>  disposisi::All()
+            'dtDis' =>  disposisi::join('users','users.id','=','disposisis.id_disp')->get()
         ];
         return view("disposisis.data",$data);
     }
@@ -65,11 +65,33 @@ class disposisisCtrl extends Controller
         // }
 
     }
-    function delete($id){
-        $data = desposisi::where('id',$id)->first();
+    // function delete($id){
+    //     $data = desposisi::where('id',$id)->first();
 
-        $data->delete();
+    //     $data->delete();
+    //     return redirect('/disposisis');
+    // }
+
+    function halamanEdit($id_disp){
+        $data = disposisi::where('id_disp',$id_disp)->first();
+        $user = DB::table('users')->get();
+        // dd($data);
+        return view('disposisis.edit',['data'=>$data,'user'=>$user]);
+    }
+    
+    function edit(Request $request, $id_disp){
+        // dd($id_disp);
+        $request->validate([
+            'no_agenda' => 'required',
+            'petugas_id' => 'required',
+            'jenis_surat' => 'required',
+            'tanggal_kirim' => 'required',
+            'no_surat' => 'required',
+            'pengirim' => 'required',
+            'tanggapan' => 'required',
+        ]);
+       $data =  disposisi::where('id_disp',$id_disp)->first();
+       $data->update($request->all());
         return redirect('/disposisis');
-
     }
 }
