@@ -18,12 +18,13 @@ class CreateSuratMasuksTable extends Migration
             $table->integer('no_agenda');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->varchar('jenis_surat');
+            $table->string('jenis_surat');
             $table->date('tanggal_kirim');
             $table->integer('no_surat');
-            $table->varchar('pengirim');
-            $table->varchar('perihal');
+            $table->string('pengirim');
+            $table->string('perihal');
             $table->timestamps();
+            
         });
     }
 
