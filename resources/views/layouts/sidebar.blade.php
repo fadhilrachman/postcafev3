@@ -130,7 +130,7 @@
           </li>
          
             <li class="nav-item">
-                <a href="#" class="nav-link text-danger">
+                <a href="/logout" class="nav-link text-danger">
                   <i class="bi bi-arrow-bar-right nav-icon"></i>
                   <p>Log out</p>
                 </a>

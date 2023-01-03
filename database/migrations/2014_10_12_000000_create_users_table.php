@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('nama');
             $table->string('password');
-            $table->integer('hak_akses');
+            $table->enum('hak_akses',['admin','pegawai']);
             $table->rememberToken();    
             $table->timestamps();
         });
